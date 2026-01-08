@@ -1,0 +1,167 @@
+===== SYSTEM INFO =====
+Architecture:                            aarch64
+CPU op-mode(s):                          32-bit, 64-bit
+Byte Order:                              Little Endian
+CPU(s):                                  4
+On-line CPU(s) list:                     0-3
+Vendor ID:                               ARM
+Model name:                              Cortex-A72
+Model:                                   3
+Thread(s) per core:                      1
+Core(s) per cluster:                     4
+Socket(s):                               -
+Cluster(s):                              1
+Stepping:                                r0p3
+CPU(s) scaling MHz:                      44%
+CPU max MHz:                             1800.0000
+CPU min MHz:                             600.0000
+BogoMIPS:                                108.00
+Flags:                                   fp asimd evtstrm crc32 cpuid
+L1d cache:                               128 KiB (4 instances)
+L1i cache:                               192 KiB (4 instances)
+L2 cache:                                1 MiB (1 instance)
+NUMA node(s):                            2
+NUMA node0 CPU(s):                       0-3
+NUMA node1 CPU(s):                       0-3
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Not affected
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Vulnerable
+Vulnerability Spectre v1:                Mitigation; __user pointer sanitization
+Vulnerability Spectre v2:                Vulnerable
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+               total        used        free      shared  buff/cache   available
+Mem:           3.7Gi       839Mi       944Mi        19Mi       2.1Gi       2.9Gi
+Swap:          199Mi          0B       199Mi
+NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+mmcblk0     179:0    0 59.5G  0 disk 
+├─mmcblk0p1 179:1    0  512M  0 part /boot/firmware
+└─mmcblk0p2 179:2    0   59G  0 part /
+===== CPU BENCHMARK =====
+sysbench 1.0.20 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from current time
+
+
+Prime numbers limit: 10000
+
+Initializing worker threads...
+
+Threads started!
+
+CPU speed:
+    events per second:   939.34
+
+General statistics:
+    total time:                          10.0010s
+    total number of events:              9399
+
+Latency (ms):
+         min:                                    0.84
+         avg:                                    1.06
+         max:                                    3.76
+         95th percentile:                        1.32
+         sum:                                 9991.49
+
+Threads fairness:
+    events (avg/stddev):           9399.0000/0.00
+    execution time (avg/stddev):   9.9915/0.00
+
+===== MEMORY BENCHMARK =====
+sysbench 1.0.20 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from current time
+
+
+Running memory speed test with the following options:
+  block size: 1024KiB
+  total size: 2048MiB
+  operation: write
+  scope: global
+
+Initializing worker threads...
+
+Threads started!
+
+Total operations: 2048 ( 2369.58 per second)
+
+2048.00 MiB transferred (2369.58 MiB/sec)
+
+
+General statistics:
+    total time:                          0.8592s
+    total number of events:              2048
+
+Latency (ms):
+         min:                                    0.37
+         avg:                                    0.42
+         max:                                    3.68
+         95th percentile:                        0.46
+         sum:                                  856.26
+
+Threads fairness:
+    events (avg/stddev):           2048.0000/0.00
+    execution time (avg/stddev):   0.8563/0.00
+
+===== DISK BENCHMARK =====
+disk-test: (g=0): rw=rw, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.33
+Starting 1 process
+disk-test: Laying out IO file (1 file / 256MiB)
+
+disk-test: (groupid=0, jobs=1): err= 0: pid=2311180: Thu Jan  8 23:53:23 2026
+  read: IOPS=169, BW=679KiB/s (696kB/s)(20.0MiB/30193msec)
+    slat (usec): min=32, max=46576, avg=95.17, stdev=790.45
+    clat (usec): min=7, max=104546, avg=508.26, stdev=1577.19
+     lat (usec): min=339, max=104661, avg=603.44, stdev=1765.57
+    clat percentiles (usec):
+     |  1.00th=[   302],  5.00th=[   310], 10.00th=[   314], 20.00th=[   314],
+     | 30.00th=[   318], 40.00th=[   322], 50.00th=[   326], 60.00th=[   334],
+     | 70.00th=[   371], 80.00th=[   635], 90.00th=[  1012], 95.00th=[  1020],
+     | 99.00th=[  1319], 99.50th=[  1811], 99.90th=[  4490], 99.95th=[  8160],
+     | 99.99th=[104334]
+   bw (  KiB/s): min=    8, max= 1088, per=100.00%, avg=683.82, stdev=189.97, samples=60
+   iops        : min=    2, max=  272, avg=170.88, stdev=47.46, samples=60
+  write: IOPS=171, BW=688KiB/s (704kB/s)(20.3MiB/30193msec); 0 zone resets
+    slat (usec): min=37, max=44430, avg=113.50, stdev=819.36
+    clat (usec): min=6, max=570912, avg=5088.37, stdev=10152.71
+     lat (usec): min=1441, max=571023, avg=5201.87, stdev=10217.33
+    clat percentiles (msec):
+     |  1.00th=[    3],  5.00th=[    3], 10.00th=[    3], 20.00th=[    3],
+     | 30.00th=[    3], 40.00th=[    3], 50.00th=[    4], 60.00th=[    4],
+     | 70.00th=[    4], 80.00th=[    4], 90.00th=[    5], 95.00th=[   22],
+     | 99.00th=[   28], 99.50th=[   43], 99.90th=[   45], 99.95th=[   83],
+     | 99.99th=[  575]
+   bw (  KiB/s): min=    8, max=  936, per=100.00%, avg=692.08, stdev=161.70, samples=60
+   iops        : min=    2, max=  234, avg=172.95, stdev=40.40, samples=60
+  lat (usec)   : 10=0.02%, 20=0.01%, 50=0.01%, 250=0.02%, 500=38.06%
+  lat (usec)   : 750=2.40%, 1000=0.95%
+  lat (msec)   : 2=8.48%, 4=41.85%, 10=3.60%, 20=0.58%, 50=3.98%
+  lat (msec)   : 100=0.01%, 250=0.02%, 750=0.01%
+  cpu          : usr=0.79%, sys=2.71%, ctx=12043, majf=0, minf=34
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=5128,5191,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=679KiB/s (696kB/s), 679KiB/s-679KiB/s (696kB/s-696kB/s), io=20.0MiB (21.0MB), run=30193-30193msec
+  WRITE: bw=688KiB/s (704kB/s), 688KiB/s-688KiB/s (704kB/s-704kB/s), io=20.3MiB (21.3MB), run=30193-30193msec
+
+Disk stats (read/write):
+  mmcblk0: ios=5215/5357, merge=0/146, ticks=3361/40123, in_queue=43540, util=76.58%
