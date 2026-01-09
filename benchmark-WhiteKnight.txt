@@ -1,0 +1,166 @@
+===== SYSTEM INFO =====
+Architecture:                         x86_64
+CPU op-mode(s):                       32-bit, 64-bit
+Address sizes:                        48 bits physical, 48 bits virtual
+Byte Order:                           Little Endian
+CPU(s):                               16
+On-line CPU(s) list:                  0-15
+Vendor ID:                            AuthenticAMD
+Model name:                           AMD Ryzen 7 5700G with Radeon Graphics
+CPU family:                           25
+Model:                                80
+Thread(s) per core:                   2
+Core(s) per socket:                   8
+Socket(s):                            1
+Stepping:                             0
+BogoMIPS:                             7599.82
+Flags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl tsc_reliable nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core ssbd ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr arat npt nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload umip vaes vpclmulqdq rdpid fsrm
+Virtualization:                       AMD-V
+Hypervisor vendor:                    Microsoft
+Virtualization type:                  full
+L1d cache:                            256 KiB (8 instances)
+L1i cache:                            256 KiB (8 instances)
+L2 cache:                             4 MiB (8 instances)
+L3 cache:                             16 MiB (1 instance)
+NUMA node(s):                         1
+NUMA node0 CPU(s):                    0-15
+Vulnerability Gather data sampling:   Not affected
+Vulnerability Itlb multihit:          Not affected
+Vulnerability L1tf:                   Not affected
+Vulnerability Mds:                    Not affected
+Vulnerability Meltdown:               Not affected
+Vulnerability Mmio stale data:        Not affected
+Vulnerability Reg file data sampling: Not affected
+Vulnerability Retbleed:               Not affected
+Vulnerability Spec rstack overflow:   Vulnerable: Safe RET, no microcode
+Vulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:             Mitigation; Retpolines; IBPB conditional; IBRS_FW; STIBP always-on; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+Vulnerability Srbds:                  Not affected
+Vulnerability Tsx async abort:        Not affected
+               total        used        free      shared  buff/cache   available
+Mem:           7.7Gi       547Mi       6.2Gi       3.5Mi       1.1Gi       7.1Gi
+Swap:          2.0Gi          0B       2.0Gi
+NAME MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda    8:0    0 388.6M  1 disk 
+sdb    8:16   0   186M  1 disk 
+sdc    8:32   0     2G  0 disk [SWAP]
+sdd    8:48   0     1T  0 disk /mnt/wslg/distro
+                               /
+===== CPU BENCHMARK =====
+sysbench 1.0.20 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from current time
+
+
+Prime numbers limit: 10000
+
+Initializing worker threads...
+
+Threads started!
+
+CPU speed:
+    events per second:  5116.99
+
+General statistics:
+    total time:                          10.0002s
+    total number of events:              51187
+
+Latency (ms):
+         min:                                    0.19
+         avg:                                    0.20
+         max:                                    0.75
+         95th percentile:                        0.21
+         sum:                                 9986.75
+
+Threads fairness:
+    events (avg/stddev):           51187.0000/0.00
+    execution time (avg/stddev):   9.9867/0.00
+
+===== MEMORY BENCHMARK =====
+sysbench 1.0.20 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from current time
+
+
+Running memory speed test with the following options:
+  block size: 1024KiB
+  total size: 2048MiB
+  operation: write
+  scope: global
+
+Initializing worker threads...
+
+Threads started!
+
+Total operations: 2048 (34833.13 per second)
+
+2048.00 MiB transferred (34833.13 MiB/sec)
+
+
+General statistics:
+    total time:                          0.0578s
+    total number of events:              2048
+
+Latency (ms):
+         min:                                    0.02
+         avg:                                    0.03
+         max:                                    0.13
+         95th percentile:                        0.05
+         sum:                                   56.79
+
+Threads fairness:
+    events (avg/stddev):           2048.0000/0.00
+    execution time (avg/stddev):   0.0568/0.00
+
+===== DISK BENCHMARK =====
+Using fio ioengine: libaio
+disk-test: (g=0): rw=rw, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.36
+Starting 1 process
+disk-test: Laying out IO file (1 file / 256MiB)
+
+disk-test: (groupid=0, jobs=1): err= 0: pid=1510: Fri Jan  9 00:24:53 2026
+  read: IOPS=3322, BW=13.0MiB/s (13.6MB/s)(128MiB/9853msec)
+    slat (nsec): min=10750, max=98802, avg=11793.84, stdev=2805.44
+    clat (usec): min=94, max=2449, avg=145.87, stdev=58.96
+     lat (usec): min=107, max=2460, avg=157.67, stdev=59.17
+    clat percentiles (usec):
+     |  1.00th=[  110],  5.00th=[  113], 10.00th=[  114], 20.00th=[  116],
+     | 30.00th=[  119], 40.00th=[  122], 50.00th=[  128], 60.00th=[  137],
+     | 70.00th=[  143], 80.00th=[  172], 90.00th=[  182], 95.00th=[  243],
+     | 99.00th=[  379], 99.50th=[  396], 99.90th=[  445], 99.95th=[  766],
+     | 99.99th=[ 2024]
+   bw (  KiB/s): min=12592, max=14240, per=100.00%, avg=13297.26, stdev=343.87, samples=19
+   iops        : min= 3148, max= 3560, avg=3324.32, stdev=85.97, samples=19
+  write: IOPS=3328, BW=13.0MiB/s (13.6MB/s)(128MiB/9853msec); 0 zone resets
+    slat (usec): min=10, max=320, avg=12.19, stdev= 3.31
+    clat (usec): min=95, max=760, avg=128.16, stdev=12.68
+     lat (usec): min=115, max=772, avg=140.35, stdev=13.84
+    clat percentiles (usec):
+     |  1.00th=[  118],  5.00th=[  121], 10.00th=[  122], 20.00th=[  123],
+     | 30.00th=[  124], 40.00th=[  125], 50.00th=[  126], 60.00th=[  126],
+     | 70.00th=[  127], 80.00th=[  129], 90.00th=[  139], 95.00th=[  149],
+     | 99.00th=[  182], 99.50th=[  196], 99.90th=[  231], 99.95th=[  251],
+     | 99.99th=[  269]
+   bw (  KiB/s): min=12856, max=14392, per=99.94%, avg=13308.21, stdev=393.52, samples=19
+   iops        : min= 3214, max= 3598, avg=3327.05, stdev=98.38, samples=19
+  lat (usec)   : 100=0.01%, 250=97.93%, 500=2.02%, 750=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%
+  cpu          : usr=2.30%, sys=13.37%, ctx=65537, majf=0, minf=15
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=32737,32799,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=13.0MiB/s (13.6MB/s), 13.0MiB/s-13.0MiB/s (13.6MB/s-13.6MB/s), io=128MiB (134MB), run=9853-9853msec
+  WRITE: bw=13.0MiB/s (13.6MB/s), 13.0MiB/s-13.0MiB/s (13.6MB/s-13.6MB/s), io=128MiB (134MB), run=9853-9853msec
+
+Disk stats (read/write):
+  sdd: ios=32379/32460, sectors=259032/274648, merge=0/57, ticks=4507/3223, in_queue=7742, util=70.28%
