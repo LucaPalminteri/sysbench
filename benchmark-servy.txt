@@ -1,0 +1,171 @@
+===== SYSTEM INFO =====
+Architecture:                         x86_64
+CPU op-mode(s):                       32-bit, 64-bit
+Address sizes:                        36 bits physical, 48 bits virtual
+Byte Order:                           Little Endian
+CPU(s):                               2
+On-line CPU(s) list:                  0,1
+Vendor ID:                            GenuineIntel
+Model name:                           Intel(R) Core(TM)2 Duo CPU     E7400  @ 2.80GHz
+CPU family:                           6
+Model:                                23
+Thread(s) per core:                   1
+Core(s) per socket:                   2
+Socket(s):                            1
+Stepping:                             10
+BogoMIPS:                             5599.87
+Flags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ht tm pbe syscall nx lm constant_tsc arch_perfmon pebs bts rep_good nopl cpuid aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm sse4_1 xsave lahf_lm pti dtherm
+L1d cache:                            64 KiB (2 instances)
+L1i cache:                            64 KiB (2 instances)
+L2 cache:                             3 MiB (1 instance)
+NUMA node(s):                         1
+NUMA node0 CPU(s):                    0,1
+Vulnerability Gather data sampling:   Not affected
+Vulnerability Itlb multihit:          KVM: Mitigation: VMX unsupported
+Vulnerability L1tf:                   Mitigation; PTE Inversion
+Vulnerability Mds:                    Vulnerable: Clear CPU buffers attempted, no microcode; SMT disabled
+Vulnerability Meltdown:               Mitigation; PTI
+Vulnerability Mmio stale data:        Unknown: No mitigations
+Vulnerability Reg file data sampling: Not affected
+Vulnerability Retbleed:               Not affected
+Vulnerability Spec rstack overflow:   Not affected
+Vulnerability Spec store bypass:      Vulnerable
+Vulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:             Mitigation; Retpolines; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+Vulnerability Srbds:                  Not affected
+Vulnerability Tsx async abort:        Not affected
+               total        used        free      shared  buff/cache   available
+Mem:           3.8Gi       647Mi       601Mi       768Ki       2.8Gi       3.1Gi
+Swap:          3.8Gi       1.8Mi       3.8Gi
+NAME                      MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0                       7:0    0  73.9M  1 loop /snap/core22/1722
+loop1                       7:1    0  44.4M  1 loop /snap/snapd/23545
+loop2                       7:2    0 139.6M  1 loop /snap/docker/2963
+loop3                       7:3    0  48.1M  1 loop /snap/snapd/25935
+loop4                       7:4    0  66.8M  1 loop /snap/core24/1243
+loop5                       7:5    0    74M  1 loop /snap/core22/2193
+loop6                       7:6    0 151.4M  1 loop /snap/docker/3377
+sda                         8:0    0 698.6G  0 disk 
+├─sda1                      8:1    0     1M  0 part 
+├─sda2                      8:2    0     2G  0 part /boot
+└─sda3                      8:3    0 696.6G  0 part 
+  └─ubuntu--vg-ubuntu--lv 252:0    0   100G  0 lvm  /
+===== CPU BENCHMARK =====
+sysbench 1.0.20 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from current time
+
+
+Prime numbers limit: 10000
+
+Initializing worker threads...
+
+Threads started!
+
+CPU speed:
+    events per second:  1046.02
+
+General statistics:
+    total time:                          10.0002s
+    total number of events:              10463
+
+Latency (ms):
+         min:                                    0.95
+         avg:                                    0.96
+         max:                                    0.99
+         95th percentile:                        0.95
+         sum:                                 9996.85
+
+Threads fairness:
+    events (avg/stddev):           10463.0000/0.00
+    execution time (avg/stddev):   9.9968/0.00
+
+===== MEMORY BENCHMARK =====
+sysbench 1.0.20 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from current time
+
+
+Running memory speed test with the following options:
+  block size: 1024KiB
+  total size: 2048MiB
+  operation: write
+  scope: global
+
+Initializing worker threads...
+
+Threads started!
+
+Total operations: 2048 (12638.67 per second)
+
+2048.00 MiB transferred (12638.67 MiB/sec)
+
+
+General statistics:
+    total time:                          0.1597s
+    total number of events:              2048
+
+Latency (ms):
+         min:                                    0.08
+         avg:                                    0.08
+         max:                                    0.19
+         95th percentile:                        0.08
+         sum:                                  158.68
+
+Threads fairness:
+    events (avg/stddev):           2048.0000/0.00
+    execution time (avg/stddev):   0.1587/0.00
+
+===== DISK BENCHMARK =====
+disk-test: (g=0): rw=rw, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.36
+Starting 1 process
+disk-test: Laying out IO file (1 file / 256MiB)
+
+disk-test: (groupid=0, jobs=1): err= 0: pid=30133: Thu Jan  8 23:56:27 2026
+  read: IOPS=2493, BW=9975KiB/s (10.2MB/s)(128MiB/13128msec)
+    slat (usec): min=9, max=118, avg=10.57, stdev= 1.46
+    clat (usec): min=46, max=116493, avg=148.93, stdev=1486.63
+     lat (usec): min=58, max=116508, avg=159.50, stdev=1486.79
+    clat percentiles (usec):
+     |  1.00th=[   67],  5.00th=[   71], 10.00th=[   72], 20.00th=[   76],
+     | 30.00th=[   78], 40.00th=[   80], 50.00th=[   82], 60.00th=[   83],
+     | 70.00th=[   95], 80.00th=[  100], 90.00th=[  105], 95.00th=[  111],
+     | 99.00th=[  367], 99.50th=[  519], 99.90th=[19268], 99.95th=[26346],
+     | 99.99th=[71828]
+   bw (  KiB/s): min=   32, max=19696, per=99.14%, avg=9889.54, stdev=6383.77, samples=26
+   iops        : min=    8, max= 4924, avg=2472.38, stdev=1595.94, samples=26
+  write: IOPS=2498, BW=9994KiB/s (10.2MB/s)(128MiB/13128msec); 0 zone resets
+    slat (usec): min=9, max=62227, avg=13.02, stdev=343.54
+    clat (usec): min=57, max=149817, avg=224.91, stdev=3167.24
+     lat (usec): min=68, max=149840, avg=237.94, stdev=3187.22
+    clat percentiles (usec):
+     |  1.00th=[   71],  5.00th=[   75], 10.00th=[   76], 20.00th=[   77],
+     | 30.00th=[   79], 40.00th=[   81], 50.00th=[   82], 60.00th=[   83],
+     | 70.00th=[   84], 80.00th=[   85], 90.00th=[   89], 95.00th=[  118],
+     | 99.00th=[  347], 99.50th=[  482], 99.90th=[72877], 99.95th=[72877],
+     | 99.99th=[76022]
+   bw (  KiB/s): min=   24, max=19912, per=99.13%, avg=9907.38, stdev=6417.45, samples=26
+   iops        : min=    6, max= 4978, avg=2476.85, stdev=1604.36, samples=26
+  lat (usec)   : 50=0.01%, 100=85.98%, 250=12.66%, 500=0.84%, 750=0.23%
+  lat (usec)   : 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=0.03%, 20=0.09%, 50=0.04%
+  lat (msec)   : 100=0.09%, 250=0.01%
+  cpu          : usr=2.18%, sys=6.78%, ctx=65542, majf=0, minf=15
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=32737,32799,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=9975KiB/s (10.2MB/s), 9975KiB/s-9975KiB/s (10.2MB/s-10.2MB/s), io=128MiB (134MB), run=13128-13128msec
+  WRITE: bw=9994KiB/s (10.2MB/s), 9994KiB/s-9994KiB/s (10.2MB/s-10.2MB/s), io=128MiB (134MB), run=13128-13128msec
+
+Disk stats (read/write):
+    dm-0: ios=32451/32557, sectors=259608/378696, merge=0/0, ticks=4798/9248, in_queue=14046, util=91.78%, aggrios=32737/32859, aggsectors=261896/380840, aggrmerge=0/9, aggrticks=4900/11426, aggrin_queue=16518, aggrutil=91.47%
+  sda: ios=32737/32859, sectors=261896/380840, merge=0/9, ticks=4900/11426, in_queue=16518, util=91.47%
